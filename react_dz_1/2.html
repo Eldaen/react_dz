@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Второй пункт</title>
+</head>
+<body>
+<p>Смотрите консоль.</p>
+
+
+<script>
+
+    console.log(calculateArea('square', {width: 10}));
+    console.log(calculateArea('rectangle', {width: 10, height: 20}));
+    console.log(calculateArea('circle', {r: 10}));
+    console.log(calculateArea('unknownFigure', {width: 10}));
+    //Неправильно заданный параметр
+    console.log(calculateArea('square', 10));
+
+    /**
+     * Входная функция вычисления площади
+     * @param figureName string
+     * @param data object
+     */
+    function calculateArea(figureName, data = null)
+    {
+        let area;
+        if(!data){return console.log('Данных не предоставлено')}
+        switch(figureName)
+        {
+            //У квадрата должна быть задана ширина стороны
+            case 'square':
+                area = squareArea(data.width);
+                break;
+
+            //Тут нужна ширина и высота
+            case 'rectangle':
+                area = rectangleArea(data.width, data.height);
+                break;
+
+            //Треугольник эт сложно, много писать, заленился
+            case 'triangle':
+                area = null;
+                break;
+
+            //Тут нам нужны данные о радиусе
+            case 'circle':
+                area = circleArea(data.r);
+                break;
+            default: return 'Не задано название фигуры или задано с ошибкой, доступные названия - square, triangle, circle, rectangle';
+        }
+        if(area === null){return 'Неверно заданы данные';}
+        return {area, figureName, data};
+    }
+
+    /**
+     * @param width
+     * @return decimal|null
+     */
+    function squareArea(width)
+    {
+        return (width) ? width*2 : null;
+    }
+
+    /**
+     * @param radius
+     * @return decimal|null
+     */
+    function circleArea(radius) {
+        //С Пи ничего не выдумываем, мы не гордые, тысячные и дальше нам не интересны
+        return (radius) ? 3.14 * radius : null;
+    }
+
+
+    /**
+     * @param width
+     * @param height
+     * @return decimal|null
+     */
+    function rectangleArea(width, height)
+    {
+        return (width && height) ? width * height : null;
+    }
+</script>
+</body>
+</html>

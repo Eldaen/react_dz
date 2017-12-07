@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Третий пункт</title>
+</head>
+<body>
+<p>Всё в консоли, смотрим туда</p>
+<script>
+    window.onload = function()
+    {
+        let manager = new Manager('Вася', 28, '30-10-1989', 20000, 'managers');
+        let developer = new Developer('Василий', 28, '30-10-1989', 25000, 'developers', manager);
+        console.log(manager);
+        console.log(developer);
+        manager.addDev(developer);
+        console.log(manager);
+    }
+</script>
+<script src="Human.js"></script>
+<script src="Employee.js"></script>
+<script src="Developer.js"></script>
+<script src="Manager.js"></script>
+</body>
+</html>
