@@ -10,8 +10,7 @@
     /**
      * Выдаёт последовательно prompt-ы
      */
-    function* questionnaire()
-    {
+    function* questionnaire() {
         yield prompt('Введите имя');
         yield prompt('Введите фамилию');
     }
@@ -20,8 +19,7 @@
      * Вызывает генератор и последовательно забирает данные
      * @param generator
      */
-    function execute(generator)
-    {
+    function execute(generator) {
         let data = {};
         data.name = generator.next().value;
         data.surname = generator.next().value;

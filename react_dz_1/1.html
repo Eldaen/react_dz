@@ -12,21 +12,17 @@
 
 
 <script>
-
-    loop(3, () => console.log('Сработал callback'));
-
-    /**
-     * @param times
-     * @param callback
-     */
-    function loop(times = 0, callback = null)
-    {
-        if(!callback) return;
-        for(let i = 0; i < times; i++)
-        {
-            callback();
-        }
+  loop(3, () => console.log('Сработал callback'))
+  /**
+   * @param times
+   * @param callback
+   */
+  function loop (times = 0, callback = null) {
+    if (!callback) return
+    for (let i = 0; i < times; i++) {
+      callback()
     }
+  }
 </script>
 </body>
 </html>

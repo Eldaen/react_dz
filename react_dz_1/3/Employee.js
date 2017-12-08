@@ -1,5 +1,4 @@
-class Employee extends Human
-{
+class Employee extends Human {
     constructor(name, age, dateOfBirth, salary, department)
     {
         super(name, age, dateOfBirth);
