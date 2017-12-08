@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пункт 5</title>
+</head>
+<body>
+
+<script>
+    let sequence = Promise.resolve();
+    let data = [];
+
+    //Строим цепочку промисов, которые должны выполниться один за одним.
+    for(let i = 0; i < 10; i++)
+    {
+        sequence = sequence
+            //вот тут в then мы ничего из предыдущего sequence не получаем и просто выполняем вызов функции httpGet
+            .then(() => httpGet("https://jsonplaceholder.typicode.com/users/" + (i+1)))
+            //тут кладём в result что пришло из httpGet выше
+            .then(result => data.push(result));
+    }
+
+    //когда вся цепочка выстроится и выполнится, то очередь придёт сюда, data будет сформирована и можно будет её вывести
+    sequence.then(() => {
+        console.log(data)
+    });
+
+    /**
+     * Запрашивает данные через URL и возвращает промис который возвращает результат
+     * @param url
+     * @return {Promise<JSON>}
+     */
+    function httpGet(url) {
+        return new Promise(function(resolve, reject) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    resolve(this.response);
+                } else {
+                    let error = new Error(this.statusText);
+                    error.code = this.status;
+                    reject(error);
+                }
+            };
+
+            xhr.onerror = function() {
+                reject(new Error("Что-то пошло не так"));
+            };
+
+            xhr.send();
+        });
+
+    }
+</script>
+</body>
+</html>

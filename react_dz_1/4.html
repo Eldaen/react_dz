@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пункт 4</title>
+</head>
+<body>
+<p>Вот тут я что-то вообще не уверен, что сделал то что нужно, но вроде как-то работает.</p>
+<script>
+    /**
+     * Выдаёт последовательно prompt-ы
+     */
+    function* questionnaire() {
+        yield prompt('Введите имя');
+        yield prompt('Введите фамилию');
+    }
+
+    /**
+     * Вызывает генератор и последовательно забирает данные
+     * @param generator
+     */
+    function execute(generator) {
+        let data = {};
+        data.name = generator.next().value;
+        data.surname = generator.next().value;
+        console.log(data);
+    }
+    execute(questionnaire());
+</script>
+</body>
+</html>

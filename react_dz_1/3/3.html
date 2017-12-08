@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Третий пункт</title>
+</head>
+<body>
+<p>Всё в консоли, смотрим туда</p>
+<script>
+  window.onload = function () {
+    const devs = [
+      new Developer('Вася', 25, '5-1-1989', 20000, 'backend'),
+      new Developer('Петя', 26, '6-2-1989', 20000, 'backend'),
+      new Developer('Федя', 27, '7-3-1989', 20000, 'backend'),
+      new Developer('Мища', 28, '8-4-1989', 20000, 'backend')
+    ]
+
+    let manager = new Manager('Вася', 28, '30-10-1989', 20000, 'managers')
+    //через Object.assign и devs.reduce не осилил, сделал вот так =(
+    for (let i = 0; i < devs.length; i++) {
+      manager.addDev(devs[i])
+    }
+    let developer = new Developer('Василий', 28, '30-10-1989', 25000, 'developers', manager)
+
+    manager.addDev(developer)
+    console.log(developer)
+    manager.removeDev(developer.id)
+    console.log(manager)
+  }
+</script>
+<script src="Human.js"></script>
+<script src="Employee.js"></script>
+<script src="Developer.js"></script>
+<script src="Manager.js"></script>
+</body>
+</html>
