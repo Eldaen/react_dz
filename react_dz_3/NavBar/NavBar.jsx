@@ -1,5 +1,5 @@
 const React = require('react')
-require('./NavBarList.jsx')
+const NavBarList = require('./NavBarList.jsx')
 
 class NavBar extends React.Component {
   render () {

@@ -3,69 +3,14 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
     <meta charset="UTF-8">
     <title>Домашнее задание 3</title>
 </head>
 <body>
 <div id="main"></div>
-<script type="text/babel">
-  /**
-   * @returns
-   */
-  class Layout extends React.Component {
-    render () {
-      return (
-        <NavBar/>
-      )
-    }
-  }
-
-  class NavBarItem extends React.Component {
-    render () {
-      return (
-        <li className={this.props.className}><a href={this.props.href}>{this.props.text}</a></li>
-      )
-    }
-  }
-
-  class NavBarList extends React.Component {
-    render () {
-      return (
-        <ul className={this.props.className}>
-            <NavBarItem className="active" text="Home" href="#"/>
-            <NavBarItem text="About" href="#"/>
-            <NavBarItem text="Contact" href="#"/>
-            <NavBarItem text="Login" href="#"/>
-        </ul>
-      )
-    }
-  }
-
-  class NavBar extends React.Component {
-    render () {
-      return (
-        <nav className="navbar navbar-inverse bg-inverse">
-          <div className="container">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" className="collapse navbar-collapse">
-              <NavBarList className="nav navbar-nav navbar-right"/>
-            </div>
-          </div>
-        </nav>
-      )
-    }
-  }
-
-  ReactDOM.render(
-    <Layout/>,
-    document.getElementById('main'),
-  )
-</script>
-
+<script src="build.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

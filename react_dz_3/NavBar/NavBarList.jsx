@@ -1,5 +1,6 @@
 const React = require('react')
-require('./NavBarItem.jsx')
+const NavBarItem = require('./NavBarItem.jsx')
+const NavBarLoginLink = require('./NavBarLoginLink.jsx')
 
 class NavBarList extends React.Component {
   render () {
@@ -8,7 +9,7 @@ class NavBarList extends React.Component {
         <NavBarItem className="active" text="Home" href="#"/>
         <NavBarItem text="About" href="#"/>
         <NavBarItem text="Contact" href="#"/>
-        <NavBarItem text="Login" href="#"/>
+        <NavBarLoginLink text="Login" href="#"/>
       </ul>
     )
   }
