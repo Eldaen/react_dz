@@ -2,7 +2,14 @@ const React = require('react')
 const NavBarItem = require('./NavBarItem.jsx')
 const NavBarLoginLink = require('./NavBarLoginLink.jsx')
 
+/**
+ * List of the NavBar items
+ */
 class NavBarList extends React.Component {
+  /**
+   * render
+   * @return {ReactElement} markup
+   */
   render () {
     return (
       <ul className={this.props.className}>

@@ -1,6 +1,13 @@
 const React = require('react')
 
+/**
+ * Menu item
+ */
 class NavBarItem extends React.Component {
+  /**
+   * render
+   * @return {ReactElement} markup
+   */
   render () {
     return (
       <li className={this.props.className}>

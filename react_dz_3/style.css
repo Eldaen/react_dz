@@ -94,3 +94,61 @@
 .login-help{
     font-size: 12px;
 }
+
+
+.article
+{
+    margin: 10px;
+    padding: 24px 24px 13px 24px;
+    border:1px solid #eee;
+}
+.article__header {
+    font-size: 28px;
+    margin: 5px 0 15px 0;
+}
+.article__read-more
+{
+    display: block;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.widget-container{
+    padding: 0;
+}
+.widget {
+    margin-top: 10px;
+    padding:0 15px 0;
+    border: 1px solid #eee;
+}
+.widget--fresh {
+    margin-top: 15px;
+}
+.widget__article
+{
+    padding: 14px 0 5px 0;
+}
+.widget__header
+{
+    font-size: 18px;
+}
+.widget__article-date {
+    font-size: 14px;
+}
+.widget__article-data {
+    font-style: italic;
+    font-size: 12px;
+}
+.widget__article-author
+{
+    display: inline-block;
+    margin-left: 10px;
+}
+.widget__article-header
+{
+    font-weight:600;
+}
+
+.main-page__header {
+    padding-left: 14px
+}

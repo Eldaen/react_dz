@@ -1,13 +1,19 @@
 const React = require('react')
 
+/**
+ * Link to open a modal window with the Login form
+ */
 class NavBarLoginLink extends React.Component {
+  /**
+   * render
+   * @return {ReactElement} markup
+   */
   render () {
     return (
       <li>
         <a href={this.props.href} data-toggle="modal" data-target="#login-modal">{this.props.text}</a>
         <div className="modal fade" id="login-modal" tabIndex="-1" role="dialog"
-          aria-labelledby="myModalLabel" aria-hidden="true"
-          style={divStyle}>
+          aria-labelledby="myModalLabel" aria-hidden="true">
           <div className="modal-dialog" style={dialogStyle}>
             <div className="loginmodal-container">
               <h1>Login to Your Account</h1><br/>
@@ -27,9 +33,10 @@ class NavBarLoginLink extends React.Component {
   }
 }
 
-const divStyle = {
-  display: 'none'
-}
+/**
+ * z-index bug fix
+ * @type {{zIndex: number}}
+ */
 const dialogStyle = {
   zIndex: 1041
 }

@@ -10,7 +10,7 @@ module.exports = {
       }
     ]
   },
-  entry: './Layout.jsx',
+  entry: './App.jsx',
   output: {
     filename: 'build.js'
   }
