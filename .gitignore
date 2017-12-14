@@ -1,3 +1,5 @@
 .idea
 node_modules
 .eslintrc.*
+./react_dz_2/build.js
+build.js
