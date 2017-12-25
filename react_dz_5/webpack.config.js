@@ -15,7 +15,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/, // определяем тип файлов
         exclude: /(node_modules)/, // исключаем из обработки папку node_modules
-        loader: 'babel-loader' // определяем загрузчик
+        loader: 'babel-loader', // определяем загрузчик
+        options: {
+          presets: ['react']
+        }
       },
       {
         test: /\.css$/,
